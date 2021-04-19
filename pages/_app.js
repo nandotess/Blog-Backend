@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Router from 'next/router';
 import Head from 'next/head';
+import { Provider } from 'next-auth/client';
 import NProgress from 'nprogress';
 import { GoogleFonts } from 'next-google-fonts';
 import CssBaseline from '@material-ui/core/CssBaseline';
@@ -35,9 +36,11 @@ export default function App({ Component, pageProps }) {
         />
       </Head>
       <CssBaseline />
-      <Page>
-        <Component {...pageProps} />
-      </Page>
+      <Provider session={pageProps.session}>
+        <Page>
+          <Component {...pageProps} />
+        </Page>
+      </Provider>
     </React.Fragment>
   );
 }

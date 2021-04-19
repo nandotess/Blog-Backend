@@ -1,6 +1,7 @@
 import { clientApi } from '../../lib/sanity.server';
 import { createReadStream } from 'fs';
 import formidable from 'formidable';
+import { getSession } from 'next-auth/client';
 
 export const config = {
   api: {
@@ -8,7 +9,13 @@ export const config = {
   }
 };
 
-export default function handler(req, res) {
+export default async function handler(req, res) {
+  const session = await getSession({ req });
+
+  if (!session) {
+    res.status(401).json({ message: 'Unauthorized' });
+  }
+
   const projectId = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID;
   const dataset = process.env.NEXT_PUBLIC_SANITY_DATASET;
   const token = process.env.NEXT_PUBLIC_SANITY_API_TOKEN;
