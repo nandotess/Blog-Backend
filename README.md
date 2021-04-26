@@ -27,3 +27,4 @@
 
 - Pagination
 - Improve the image update experience
+- Fix glitch that happens when signing in (you see the gated area for a second before you actually log in)
