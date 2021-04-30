@@ -14,7 +14,7 @@
 
 ## Updating Production CMS
 
-- When pushing code to `main` branch, Vercel will automatically deploy the code to [production cms](https://admin-digital-extremes.vercel.app/).
+- When pushing code to `main` branch, Vercel will automatically deploy the code to [production cms](https://admin-nandotess.vercel.app/).
 
 ## Localhost
 
