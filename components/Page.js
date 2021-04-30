@@ -6,7 +6,11 @@ import Footer from './Footer';
 import { signIn, useSession, getSession } from 'next-auth/client';
 
 const Page = ({ children }) => {
-  const [session] = useSession();
+  const [session, loading] = useSession();
+
+  if (typeof window !== 'undefined' && loading) {
+    return null;
+  }
 
   return (
     <Container maxWidth="md">

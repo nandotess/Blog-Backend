@@ -4,7 +4,11 @@ import { Grid, Typography, Button } from '@material-ui/core';
 import { signOut, useSession, getSession } from 'next-auth/client';
 
 export default function Header() {
-  const [session] = useSession();
+  const [session, loading] = useSession();
+
+  if (typeof window !== 'undefined' && loading) {
+    return null;
+  }
 
   return (
     <Grid container spacing={3} alignItems="center">
