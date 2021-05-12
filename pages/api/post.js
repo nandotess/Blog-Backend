@@ -1,7 +1,8 @@
-import { clientApi } from '../../lib/sanity.server';
 import { createReadStream } from 'fs';
 import formidable from 'formidable';
 import { getSession } from 'next-auth/client';
+
+import { clientApi } from '@lib/sanity.server';
 
 export const config = {
   api: {
@@ -18,7 +19,7 @@ export default async function handler(req, res) {
 
   const projectId = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID;
   const dataset = process.env.NEXT_PUBLIC_SANITY_DATASET;
-  const token = process.env.NEXT_PUBLIC_SANITY_API_TOKEN;
+  const token = process.env.SANITY_API_TOKEN;
 
   let successMessage = '';
   let errorMessage = '';

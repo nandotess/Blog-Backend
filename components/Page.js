@@ -1,16 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Container, Box, Button, Typography } from '@material-ui/core';
-import Header from './Header';
-import Footer from './Footer';
 import { signIn, useSession, getSession } from 'next-auth/client';
+import { Container, Box, Button } from '@material-ui/core';
+
+import Loading from '@components/global/Loading';
+import Header from '@components/wrapper/Header';
+import Footer from '@components/wrapper/Footer';
 
 const Page = ({ children }) => {
   const [session, loading] = useSession();
-
-  if (typeof window !== 'undefined' && loading) {
-    return null;
-  }
+  const isLoading = typeof window !== 'undefined' && loading;
 
   return (
     <Container maxWidth="md">
@@ -19,8 +18,9 @@ const Page = ({ children }) => {
           <Header />
         </Box>
         <Box my={6}>
-          {session && children}
-          {!session && (
+          {isLoading && <Loading />}
+          {session && !isLoading && children}
+          {!session && !isLoading && (
             <Box my={3}>
               <Button
                 variant="contained"

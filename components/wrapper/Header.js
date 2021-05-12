@@ -1,14 +1,11 @@
 import React from 'react';
 import Link from 'next/link';
-import { Grid, Typography, Button } from '@material-ui/core';
 import { signOut, useSession, getSession } from 'next-auth/client';
+import { Grid, Typography, Button } from '@material-ui/core';
 
 export default function Header() {
   const [session, loading] = useSession();
-
-  if (typeof window !== 'undefined' && loading) {
-    return null;
-  }
+  const isLoading = typeof window !== 'undefined' && loading;
 
   return (
     <Grid container spacing={3} alignItems="center">
@@ -20,7 +17,7 @@ export default function Header() {
         </Link>
       </Grid>
       <Grid item xs={6} style={{ textAlign: 'right' }}>
-        {session && (
+        {session && !isLoading && (
           <>
             {/* <Typography component="p">
               Signed in as {session.user.email}

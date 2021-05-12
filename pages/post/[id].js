@@ -1,8 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { client } from '../../lib/sanity.server';
-import { POST_QUERY, ALL_AUTHORS_QUERY } from '../../lib/sanity.queries';
-import Post from '../../components/Post';
+
+import { client } from '@lib/sanity.server';
+import { POST_QUERY, ALL_AUTHORS_QUERY } from '@lib/sanity.queries';
+
+import Post from '@components/Post';
 
 const PostPage = ({ id, post, authors }) => {
   return <Post id={id} post={post} authors={authors} />;

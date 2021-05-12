@@ -1,12 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Router from 'next/router';
-import Head from 'next/head';
 import { Provider } from 'next-auth/client';
 import NProgress from 'nprogress';
 import { GoogleFonts } from 'next-google-fonts';
+import Router from 'next/router';
+import Head from 'next/head';
 import CssBaseline from '@material-ui/core/CssBaseline';
-import Page from '../components/Page';
+
+import Page from '@components/Page';
 
 import 'nprogress/nprogress.css';
 

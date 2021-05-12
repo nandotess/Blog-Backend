@@ -14,8 +14,10 @@ import {
 import MuiAlert from '@material-ui/lab/Alert';
 import { makeStyles } from '@material-ui/core/styles';
 import { Editor } from '@tinymce/tinymce-react';
-import formatDate from '../util/formatDate';
-import { urlForImage } from '../lib/sanity';
+
+import { urlForImage } from '@lib/sanity';
+
+import formatDate from '@util/formatDate';
 
 const useStyles = makeStyles((theme) => ({
   root: {

@@ -1,8 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { client } from '../lib/sanity.server';
-import { ALL_POSTS_QUERY } from '../lib/sanity.queries';
-import Posts from '../components/Posts';
+
+import { client } from '@lib/sanity.server';
+import { ALL_POSTS_QUERY } from '@lib/sanity.queries';
+
+import Posts from '@components/Posts';
 
 const IndexPage = ({ posts }) => {
   return <Posts posts={posts} />;

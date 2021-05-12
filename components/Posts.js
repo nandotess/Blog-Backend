@@ -5,8 +5,9 @@ import Link from 'next/link';
 import { Box, Button, Backdrop, CircularProgress } from '@material-ui/core';
 import { DataGrid } from '@material-ui/data-grid';
 import MuiAlert from '@material-ui/lab/Alert';
-import formatDate from '../util/formatDate';
-import Actions from './Actions';
+
+import formatDate from '@util/formatDate';
+import Actions from '@components/Actions';
 
 export default function Posts({ posts }) {
   const router = useRouter();

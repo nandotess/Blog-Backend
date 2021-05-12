@@ -20,7 +20,7 @@
 
 - To run the project on localhost:
   - Execute `npm install` in your terminal.
-  - Rename `.env.SAMPLE` to `.env` and update the values of the variables `NEXT_PUBLIC_SANITY_PROJECT_ID`, `NEXT_PUBLIC_SANITY_API_TOKEN`, `GOOGLE_CLIENT_ID` and `GOOGLE_CLIENT_SECRET`.
+  - Rename `.env.SAMPLE` to `.env` and update the values of the variables `NEXT_PUBLIC_SANITY_PROJECT_ID`, `SANITY_API_TOKEN`, `GOOGLE_CLIENT_ID` and `GOOGLE_CLIENT_SECRET`.
   - Execute `npm run dev` in your terminal.
 
 ## TODO

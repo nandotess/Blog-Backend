@@ -52,7 +52,6 @@ export default function Actions({
           <CreateOutlinedIcon />
         </IconButton>
       </Link>
-
       <IconButton size="small" onClick={handleDelete}>
         <DeleteOutlineOutlinedIcon />
       </IconButton>
