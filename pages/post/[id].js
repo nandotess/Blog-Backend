@@ -4,10 +4,20 @@ import PropTypes from 'prop-types';
 import { client } from '@lib/sanity.server';
 import { POST_QUERY, ALL_AUTHORS_QUERY } from '@lib/sanity.queries';
 
+import HeadMetatags from '@components/wrapper/HeadMetatags';
 import Post from '@components/Post';
 
 const PostPage = ({ id, post, authors }) => {
-  return <Post id={id} post={post} authors={authors} />;
+  const isNew = id === 'new';
+  const title = isNew ? 'New post' : 'Edit post';
+  const description = title;
+
+  return (
+    <React.Fragment>
+      <HeadMetatags title={title} description={description} />
+      <Post id={id} post={post} authors={authors} isNew={isNew} />
+    </React.Fragment>
+  );
 };
 
 PostPage.propTypes = {

@@ -27,10 +27,9 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
-export default function Post({ id, post, authors }) {
+export default function Post({ id, post, authors, isNew }) {
   const router = useRouter();
   const classes = useStyles();
-  const isNew = id === 'new';
 
   const [data, setData] = useState({
     _type: 'post',
@@ -198,5 +197,6 @@ export default function Post({ id, post, authors }) {
 Post.propTypes = {
   id: PropTypes.string.isRequired,
   post: PropTypes.object.isRequired,
-  authors: PropTypes.array.isRequired
+  authors: PropTypes.array.isRequired,
+  isNew: PropTypes.bool.isRequired
 };
